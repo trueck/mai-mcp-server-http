@@ -24,4 +24,6 @@ public interface GameRepository extends CrudRepository<Game, Long> {
       """)
     List<Game> findGamesForPlayingTime(int minutes);
 
+    @Query("SELECT title FROM game ORDER BY title")
+    List<String> findAllTitles();
 }
